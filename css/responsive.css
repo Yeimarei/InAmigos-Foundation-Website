@@ -1,0 +1,243 @@
+/* ==========================================================================
+   INAMIGOS FOUNDATION — RESPONSIVE EDITORIAL ADAPTATIONS
+   Desktop, Laptop, Tablet, and Mobile Canvas Rules
+   ========================================================================== */
+
+/* Laptop / Desktop In-Between (< 1200px) */
+@media (max-width: 1200px) {
+  .hero-editorial-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .impact-editorial-stack {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3.5rem;
+  }
+
+  .showcase-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .showcase-header-right {
+    text-align: left;
+  }
+}
+
+/* Tablet & Touch Devices (< 992px) */
+@media (max-width: 992px) {
+  .nav-menu, .nav-cta-wrap {
+    display: none;
+  }
+
+  .nav-mobile-btn {
+    display: flex;
+  }
+
+  /* Hero Re-composition */
+  .hero-canvas {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-editorial-layout {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .hero-watermark {
+    display: none;
+  }
+
+  .hero-photo-layering {
+    min-height: 460px;
+    max-width: 600px;
+  }
+
+  .hero-img-primary {
+    width: 90%;
+  }
+
+  .hero-img-secondary {
+    width: 60%;
+    bottom: -8%;
+  }
+
+  .hero-caption-note {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 2rem;
+    max-width: 100%;
+  }
+
+  /* About Re-composition */
+  .about-statement-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .about-photo-composition {
+    min-height: 460px;
+    max-width: 600px;
+  }
+
+  /* Project Stories */
+  .project-story-unit,
+  .project-story-unit.story-seva {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .story-seva .story-media-layer {
+    order: 1;
+  }
+
+  .story-seva .story-content-layer {
+    order: 2;
+  }
+
+  .story-split-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  /* Gallery Mosaic */
+  .gallery-asymmetric-composition {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .span-col-7,
+  .span-col-5,
+  .span-col-4,
+  .span-col-8 {
+    grid-column: span 2;
+  }
+
+  /* Closing Canvas */
+  .closing-layout {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+/* Mobile Screens (< 640px) */
+@media (max-width: 640px) {
+  :root {
+    --gutter: 1.25rem;
+  }
+
+  .hero-canvas {
+    padding-top: 6.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-giant-title {
+    font-size: clamp(2.85rem, 12vw, 4rem);
+    line-height: 0.95;
+  }
+
+  .hero-statement-wrap {
+    margin-top: 1.75rem;
+  }
+
+  .hero-actions-line {
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .hero-photo-layering {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-img-primary {
+    width: 100%;
+    margin-left: 0;
+    aspect-ratio: 4/5;
+  }
+
+  .hero-img-secondary {
+    position: relative;
+    width: 80%;
+    bottom: auto;
+    left: auto;
+    margin-top: -2.5rem;
+    margin-left: auto;
+  }
+
+  .about-big-quote {
+    font-size: 1.85rem;
+  }
+
+  .about-photo-composition {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-primary-frame {
+    width: 100%;
+    aspect-ratio: 4/3;
+  }
+
+  .about-secondary-frame {
+    position: relative;
+    width: 80%;
+    bottom: auto;
+    right: auto;
+    margin-top: -2.5rem;
+  }
+
+  .impact-lead-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .impact-editorial-stack {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .governance-strip {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .gallery-asymmetric-composition {
+    grid-template-columns: 1fr;
+  }
+
+  .span-col-7,
+  .span-col-5,
+  .span-col-4,
+  .span-col-8 {
+    grid-column: span 1;
+  }
+
+  .closing-title {
+    font-size: 2.75rem;
+  }
+
+  .closing-form-wrap {
+    padding: 1.5rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+}

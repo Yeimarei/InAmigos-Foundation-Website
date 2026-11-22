@@ -1,0 +1,1311 @@
+/* ==========================================================================
+   INAMIGOS FOUNDATION — EDITORIAL AWARENESS PLATFORM
+   Complete Redesign: Warm Beige & Deep Charcoal Canvas
+   Typography: Geist by Vercel & Maghfirea
+   Reference Philosophy: Farm Africa & High-End Editorial Publishing
+   ========================================================================== */
+
+/* Typography Declarations */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../assets/fonts/Geist-Variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../assets/fonts/GeistMono-Variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Maghfirea';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/Maghfirea.otf') format('opentype');
+}
+
+:root {
+  /* Strict Palette: Warm Beige & Deep Charcoal */
+  --c-beige-warm: #EAE4D8;
+  --c-beige-light: #F2EEE6;
+  --c-beige-soft: #F7F4ED;
+  --c-charcoal: #242522;
+  --c-charcoal-deep: #1C1D1A;
+  --c-near-black: #171816;
+  --c-warm-white: #F8F6F0;
+  --c-muted-grey: #77766F;
+  --c-muted-light: #A3A199;
+  --c-terracotta-accent: #B8502B;
+
+  /* Borders & Rules */
+  --border-beige: rgba(36, 37, 34, 0.12);
+  --border-charcoal: rgba(248, 246, 240, 0.12);
+
+  /* Typography Stacks */
+  --font-display: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Maghfirea', Georgia, "Times New Roman", serif;
+  --font-mono: 'Geist Mono', monospace;
+
+  /* Container */
+  --container-max: 1440px;
+  --gutter: clamp(1.5rem, 4vw, 4rem);
+
+  /* Motion Curves */
+  --ease-editorial: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ==========================================================================
+   CSS Reset & Baseline
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--c-beige-warm);
+  color: var(--c-charcoal);
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.6;
+  background-color: var(--c-beige-warm);
+  color: var(--c-charcoal);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Typography Hierarchy
+   ========================================================================== */
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+h1, h2, h3, h4, .display-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+
+.hero-giant-title {
+  font-size: clamp(3.5rem, 9vw, 8.5rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+  text-transform: none;
+}
+
+.section-editorial-title {
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 0.96;
+}
+
+.section-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--c-muted-grey);
+  margin-bottom: 1.25rem;
+}
+
+/* Hero eyebrow: slightly darker for better contrast on the beige canvas */
+.hero-text-block .section-label {
+  color: #5F5E58;
+}
+
+.theme-dark .section-label {
+  color: var(--c-muted-light);
+}
+
+p.lead-statement {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 1.45vw, 1.45rem);
+  line-height: 1.55;
+  color: var(--c-charcoal);
+  font-weight: 400;
+}
+
+.theme-dark p.lead-statement {
+  color: var(--c-warm-white);
+}
+
+p.body-text {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--c-charcoal);
+}
+
+.theme-dark p.body-text {
+  color: var(--c-muted-light);
+}
+
+/* ==========================================================================
+   Canvas & Containers
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.container-fluid {
+  width: 100%;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.section-pad {
+  padding-top: clamp(5.5rem, 10vw, 10rem);
+  padding-bottom: clamp(5.5rem, 10vw, 10rem);
+  position: relative;
+}
+
+/* Editorial Theming: Beige & Charcoal */
+.theme-beige {
+  background-color: var(--c-beige-warm);
+  color: var(--c-charcoal);
+}
+
+.theme-beige-light {
+  background-color: var(--c-beige-light);
+  color: var(--c-charcoal);
+}
+
+.theme-dark {
+  background-color: var(--c-charcoal);
+  color: var(--c-warm-white);
+}
+
+.theme-near-black {
+  background-color: var(--c-near-black);
+  color: var(--c-warm-white);
+}
+
+/* Editorial Buttons */
+.btn-editorial {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.85rem;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--c-warm-white);
+  background-color: var(--c-charcoal);
+  border: 1px solid var(--c-charcoal);
+  cursor: pointer;
+  transition: all 0.35s var(--ease-editorial);
+}
+
+.btn-editorial:hover {
+  background-color: var(--c-near-black);
+  color: var(--c-beige-warm);
+  transform: translateY(-2px);
+}
+
+.btn-editorial.light {
+  background-color: var(--c-warm-white);
+  color: var(--c-charcoal);
+  border-color: var(--c-warm-white);
+}
+
+.btn-editorial.light:hover {
+  background-color: var(--c-beige-warm);
+  color: var(--c-near-black);
+}
+
+.btn-editorial-text {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--c-charcoal);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-bottom: 1px solid var(--c-charcoal);
+  padding-bottom: 2px;
+  transition: all 0.25s ease;
+}
+
+.theme-dark .btn-editorial-text {
+  color: var(--c-warm-white);
+  border-bottom-color: var(--c-warm-white);
+}
+
+.btn-editorial-text:hover {
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   01. Navigation System (Minimal, Dark Editorial Bar with High Contrast)
+   ========================================================================== */
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.25rem 0;
+  background-color: rgba(23, 24, 22, 0.96); /* Dark charcoal / near-black */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  transition: padding 0.35s var(--ease-editorial),
+              background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-nav.scrolled {
+  padding: 0.9rem 0;
+  background-color: rgba(18, 19, 17, 0.98);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+}
+
+/* Premium subtle brightening over charcoal sections */
+.site-nav.scrolled-dark,
+.site-nav.scrolled.scrolled-dark {
+  background-color: rgba(45, 47, 43, 0.94); /* Sophisticated, subtle lifted charcoal tint */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.38);
+}
+
+.nav-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  z-index: 1010;
+}
+
+.nav-brand img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+}
+
+.nav-link {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--c-warm-white);
+  position: relative;
+  transition: color 0.25s ease, opacity 0.25s ease;
+  letter-spacing: 0.01em;
+}
+
+.nav-link:hover {
+  color: var(--c-beige-warm);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--c-beige-warm);
+  transition: width 0.3s var(--ease-editorial);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-cta-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.nav-cta-wrap .btn-editorial {
+  background-color: var(--c-warm-white);
+  color: var(--c-charcoal);
+  border-color: var(--c-warm-white);
+  padding: 0.65rem 1.45rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-cta-wrap .btn-editorial:hover {
+  background-color: var(--c-beige-warm);
+  color: var(--c-near-black);
+}
+
+/* Motion.dev-style diagonal hover fill for the Get Involved CTA */
+.btn-fill {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-fill__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: inherit;
+  padding: inherit;
+  background-color: var(--c-beige-warm);
+  color: var(--c-near-black);
+  clip-path: polygon(-1% 0%, -1% 0%, -100% 100%, -1% 100%);
+  pointer-events: none;
+  transition: clip-path 0.4s cubic-bezier(0.25, 0, 0, 1);
+}
+
+.btn-fill:hover .btn-fill__overlay,
+.btn-fill:focus-visible .btn-fill__overlay {
+  clip-path: polygon(0% 0%, 200% 0%, 100% 100%, 0% 100%);
+}
+
+.nav-cta-wrap .btn-editorial.btn-fill:hover {
+  background-color: var(--c-warm-white);
+  color: var(--c-charcoal);
+  border-color: var(--c-beige-warm);
+  transform: none;
+}
+
+.nav-cta-wrap .btn-editorial.btn-fill:active {
+  transform: translateY(1px);
+}
+
+.btn-fill:focus-visible {
+  outline: 2px solid var(--c-terracotta-accent);
+  outline-offset: 3px;
+}
+
+/* Mobile Toggle */
+.nav-mobile-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1010;
+}
+
+.nav-mobile-btn span {
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  background-color: var(--c-warm-white);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-mobile-btn.open span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.nav-mobile-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-mobile-btn.open span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* Fullscreen Mobile Drawer */
+.mobile-fullscreen-nav {
+  position: fixed;
+  inset: 0;
+  background-color: var(--c-charcoal);
+  z-index: 1005;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6.5rem 2rem 3rem;
+  transform: translateY(-100%);
+  transition: transform 0.5s var(--ease-editorial);
+}
+
+.mobile-fullscreen-nav.active {
+  transform: translateY(0);
+}
+
+.mobile-links-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.mobile-links-stack a {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
+  font-weight: 600;
+  color: var(--c-warm-white);
+  line-height: 1;
+}
+
+.mobile-nav-foot {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-charcoal);
+  color: var(--c-muted-light);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   02. Hero Section: Complete Rebuild (Editorial Canvas)
+   ========================================================================== */
+
+.hero-canvas {
+  min-height: 100vh;
+  padding-top: clamp(8.5rem, 14vw, 12rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+  background-color: var(--c-beige-warm);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Typographic Watermark Layer (Depth Level 1) */
+.hero-watermark {
+  position: absolute;
+  top: 18%;
+  left: -2%;
+  font-family: var(--font-display);
+  font-size: clamp(7rem, 20vw, 20rem);
+  font-weight: 800;
+  color: rgba(36, 37, 34, 0.04);
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 0.8;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+/* Editorial Canvas Grid (Depth Level 2) */
+.hero-editorial-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: start;
+  gap: clamp(2rem, 5vw, 5rem);
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text-block {
+  padding-top: 1.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-statement-wrap {
+  margin-top: 2.75rem;
+  max-width: 520px;
+}
+
+.hero-statement-wrap p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+  line-height: 1.6;
+  color: var(--c-charcoal);
+}
+
+.hero-actions-line {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Layered Photography Composition (Depth Levels 2 & 3) */
+.hero-photo-layering {
+  position: relative;
+  min-height: 580px;
+  width: 100%;
+}
+
+/* Primary Photograph: Large Right Frame */
+.hero-img-primary {
+  position: relative;
+  width: 86%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  margin-left: auto;
+  z-index: 2;
+}
+
+.hero-img-primary img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease-editorial);
+}
+
+.hero-img-primary:hover img {
+  transform: scale(1.04);
+}
+
+/* Secondary Photograph: Asymmetric Overlap on Lower Edge */
+.hero-img-secondary {
+  position: absolute;
+  bottom: -6%;
+  left: 0%;
+  width: 54%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(23, 24, 22, 0.18);
+  z-index: 4;
+}
+
+.hero-img-secondary img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-caption-note {
+  position: absolute;
+  bottom: -15%;
+  right: 5%;
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
+  color: var(--c-muted-grey);
+  max-width: 200px;
+  line-height: 1.4;
+  z-index: 5;
+}
+
+/* Hero Section Divider */
+.editorial-rule {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-beige);
+  margin-top: clamp(4rem, 7vw, 7rem);
+}
+
+.theme-dark .editorial-rule {
+  background-color: var(--border-charcoal);
+}
+
+/* ==========================================================================
+   03. Section: About InAmigos (Asymmetric Editorial Statement)
+   ========================================================================== */
+
+.about-canvas {
+  background-color: var(--c-beige-light);
+  overflow: hidden;
+}
+
+.about-statement-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 7vw, 7rem);
+  align-items: center;
+}
+
+.about-quote-col {
+  position: relative;
+}
+
+.about-big-quote {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.8vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--c-charcoal);
+  margin-bottom: 2rem;
+}
+
+.about-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 520px;
+}
+
+.about-photo-composition {
+  position: relative;
+  min-height: 540px;
+}
+
+.about-primary-frame {
+  width: 85%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.about-primary-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-secondary-frame {
+  position: absolute;
+  bottom: -4%;
+  right: 0;
+  width: 56%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(23, 24, 22, 0.15);
+  z-index: 3;
+}
+
+.about-secondary-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   04. Major Charcoal Section 01: Project Showcase
+   ========================================================================== */
+
+.charcoal-showcase {
+  background-color: var(--c-charcoal);
+  color: var(--c-warm-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.showcase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--border-charcoal);
+  margin-bottom: clamp(3.5rem, 6vw, 6rem);
+}
+
+.showcase-header-left {
+  max-width: 680px;
+}
+
+.showcase-header-right {
+  text-align: right;
+  max-width: 320px;
+}
+
+/* Editorial Project Stories (Alternating Custom Compositions) */
+.project-story-unit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+  padding-bottom: clamp(4.5rem, 8vw, 8rem);
+  margin-bottom: clamp(4.5rem, 8vw, 8rem);
+  border-bottom: 1px solid var(--border-charcoal);
+}
+
+.project-story-unit:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Prakriti Composition */
+.story-prakriti .story-media-layer {
+  position: relative;
+  min-height: 480px;
+}
+
+.story-prakriti .media-primary {
+  width: 88%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.story-prakriti .media-primary img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-prakriti .media-overlap {
+  position: absolute;
+  bottom: -6%;
+  right: 0;
+  width: 52%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+
+.story-prakriti .media-overlap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Seva Composition (Reverse Layout) */
+.story-seva {
+  grid-template-columns: 1fr 1.1fr;
+}
+
+.story-seva .story-content-layer {
+  order: 1;
+}
+
+.story-seva .story-media-layer {
+  order: 2;
+  position: relative;
+}
+
+.story-seva .media-wide-frame {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.story-seva .media-wide-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Udaan Composition */
+.story-udaan .media-portrait-frame {
+  width: 82%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.story-udaan .media-portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Jeev & Bachpanshala Compositions */
+.story-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  padding-bottom: clamp(4.5rem, 8vw, 8rem);
+  border-bottom: 1px solid var(--border-charcoal);
+  margin-bottom: clamp(4.5rem, 8vw, 8rem);
+}
+
+.story-split-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.story-split-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.story-split-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Project Story Text Elements */
+.project-number {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--c-muted-light);
+  margin-bottom: 1rem;
+}
+
+.project-heading {
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  margin-bottom: 1.25rem;
+  color: var(--c-warm-white);
+}
+
+.project-stat-line {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  font-weight: 500;
+  color: var(--c-beige-warm);
+  margin-bottom: 1.5rem;
+}
+
+.project-text-paragraph {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--c-muted-light);
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+
+/* ==========================================================================
+   05. Section: Impact (Warm Beige Canvas with Oversized Typography)
+   ========================================================================== */
+
+.impact-canvas {
+  background-color: var(--c-beige-warm);
+  color: var(--c-charcoal);
+  overflow: hidden;
+}
+
+.impact-lead-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: end;
+  gap: 3rem;
+  margin-bottom: clamp(4rem, 7vw, 7rem);
+}
+
+.impact-headline {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+}
+
+.impact-editorial-stack {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.5rem, 3vw, 3.5rem);
+  padding-top: 3.5rem;
+  border-top: 1px solid var(--border-beige);
+}
+
+.impact-figure-unit {
+  display: flex;
+  flex-direction: column;
+}
+
+.impact-giant-num {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--c-charcoal);
+  margin-bottom: 0.75rem;
+}
+
+.impact-descriptor {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--c-charcoal);
+  margin-bottom: 0.5rem;
+}
+
+.impact-sub-note {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--c-muted-grey);
+}
+
+/* Verified Governance Strip */
+.governance-strip {
+  margin-top: clamp(4rem, 7vw, 7rem);
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border-beige);
+  border-bottom: 1px solid var(--border-beige);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.governance-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.gov-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-charcoal);
+}
+
+.gov-desc {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--c-muted-grey);
+}
+
+/* ==========================================================================
+   06. Major Charcoal Section 02: Photo Stories (Editorial Mosaic)
+   ========================================================================== */
+
+.charcoal-gallery {
+  background-color: var(--c-near-black);
+  color: var(--c-warm-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-editorial-head {
+  max-width: 720px;
+  margin-bottom: clamp(3.5rem, 6vw, 6rem);
+}
+
+.gallery-asymmetric-composition {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+  align-items: start;
+}
+
+.gallery-cell {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.85s var(--ease-editorial);
+}
+
+.gallery-cell:hover img {
+  transform: scale(1.04);
+}
+
+.cell-caption {
+  margin-top: 0.75rem;
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
+  color: var(--c-muted-light);
+  line-height: 1.4;
+}
+
+/* Asymmetric Column Spans */
+.span-col-7 {
+  grid-column: span 7;
+}
+
+.span-col-5 {
+  grid-column: span 5;
+}
+
+.span-col-4 {
+  grid-column: span 4;
+}
+
+.span-col-8 {
+  grid-column: span 8;
+}
+
+.ratio-landscape {
+  aspect-ratio: 16/10;
+}
+
+.ratio-portrait {
+  aspect-ratio: 4/5;
+}
+
+.ratio-square {
+  aspect-ratio: 1/1;
+}
+
+/* ==========================================================================
+   07. Section: Get Involved & Closing Statement
+   ========================================================================== */
+
+.closing-canvas {
+  background-color: var(--c-charcoal-deep);
+  color: var(--c-warm-white);
+  padding-top: clamp(6rem, 11vw, 11rem);
+  padding-bottom: clamp(5rem, 9vw, 9rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.closing-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.closing-title {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  margin-bottom: 2rem;
+}
+
+.closing-text-lead {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--c-muted-light);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 520px;
+}
+
+.closing-contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-charcoal);
+}
+
+.closing-contact-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.closing-contact-row span.label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--c-muted-light);
+  margin-bottom: 0.25rem;
+}
+
+.closing-contact-row a,
+.closing-contact-row address {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--c-warm-white);
+  font-style: normal;
+}
+
+/* Editorial Inquiry Form */
+.closing-form-wrap {
+  padding: clamp(2rem, 4vw, 3.5rem);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-charcoal);
+}
+
+.form-group-editorial {
+  margin-bottom: 1.75rem;
+}
+
+.form-label-editorial {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  color: var(--c-warm-white);
+  margin-bottom: 0.5rem;
+}
+
+.form-field-editorial {
+  width: 100%;
+  padding: 0.85rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-charcoal);
+  color: var(--c-warm-white);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  transition: border-bottom-color 0.25s ease;
+}
+
+.form-field-editorial:focus {
+  outline: none;
+  border-bottom-color: var(--c-warm-white);
+}
+
+.form-select-editorial {
+  width: 100%;
+  padding: 0.85rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-charcoal);
+  color: var(--c-warm-white);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+}
+
+.form-select-editorial option {
+  background-color: var(--c-charcoal);
+  color: var(--c-warm-white);
+}
+
+/* ==========================================================================
+   08. Minimal Editorial Footer
+   ========================================================================== */
+
+.editorial-footer {
+  background-color: var(--c-near-black);
+  color: var(--c-warm-white);
+  padding: 3rem 0;
+  border-top: 1px solid var(--border-charcoal);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-left img {
+  height: 32px;
+  width: auto;
+}
+
+.footer-copy {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--c-muted-light);
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-link {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--c-muted-light);
+  transition: color 0.25s ease;
+}
+
+.footer-link:hover {
+  color: var(--c-warm-white);
+}
+
+/* ==========================================================================
+   Modals & Lightboxes (Minimalist Editorial Styling)
+   ========================================================================== */
+
+.editorial-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(23, 24, 22, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-editorial);
+}
+
+.editorial-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.editorial-modal-window {
+  background-color: var(--c-charcoal);
+  color: var(--c-warm-white);
+  max-width: 760px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: clamp(2rem, 5vw, 4rem);
+  position: relative;
+  border: 1px solid var(--border-charcoal);
+}
+
+.modal-close-trigger {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--c-warm-white);
+  cursor: pointer;
+}
+
+/* Lightbox */
+.lightbox-frame {
+  max-width: 960px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-frame img {
+  max-height: 80vh;
+  width: auto;
+  object-fit: contain;
+}
+
+.lightbox-caption-text {
+  margin-top: 1rem;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--c-warm-white);
+  text-align: center;
+}

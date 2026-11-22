@@ -1,0 +1,91 @@
+/* ==========================================================================
+   INAMIGOS FOUNDATION — EDITORIAL MOTION SYSTEM
+   Choreographed GSAP & ScrollTrigger Classes
+   Strict: No pulsing dots, no floating balls, no arbitrary bouncing
+   ========================================================================== */
+
+/* Image Clipping Path Mask Reveals */
+.reveal-mask-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.reveal-mask-img {
+  will-change: transform, clip-path;
+  transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Staggered Text Line Wrapper */
+.editorial-line-wrap {
+  overflow: hidden;
+  display: block;
+}
+
+.editorial-line {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.editorial-line.is-revealed {
+  transform: translateY(0);
+}
+
+/* Closing Statement Typewriter */
+.closing-title.is-typing {
+  white-space: pre-wrap;
+}
+
+.typewriter-caret {
+  display: inline-block;
+  width: 0.055em;
+  height: 0.8em;
+  margin-left: 0.05em;
+  background-color: currentColor;
+  vertical-align: -0.01em;
+  animation: typewriter-caret-blink 1.05s steps(1, end) infinite;
+}
+
+@keyframes typewriter-caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Parallax Depth Classes */
+[data-parallax-speed] {
+  will-change: transform;
+}
+
+/* Subtle Hover Transitions for Editorial Photography */
+.photo-editorial-hover {
+  overflow: hidden;
+}
+
+.photo-editorial-hover img {
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1), filter 0.85s ease;
+}
+
+.photo-editorial-hover:hover img {
+  transform: scale(1.03);
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .editorial-line {
+    transform: none !important;
+  }
+}
